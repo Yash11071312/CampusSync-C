@@ -26,5 +26,13 @@ typedef struct Student
     struct Student *next;
 
 } Student;
+void initializeStudentList(void);
 
+void addStudent(void);
+
+void viewStudents(void);
+
+void updateStudent(void);
+
+void deleteStudent(void);
 #endif
