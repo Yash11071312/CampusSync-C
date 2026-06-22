@@ -77,11 +77,70 @@ void viewStudents(void)
 
 void updateStudent(void)
 {
+    int searchRoll;
+
+printf("Enter Roll Number: ");
+scanf("%d",&searchRoll);
+
+     Student * temp =head;
+
+while(temp!=NULL)
+{
+    if(temp->rollNo==searchRoll)
+    {printf("\nStudent Found!\n");
+printf("-----------------------------\n");
+printf("Enter Name: ");
+scanf(" %49[^\n]", temp->name);
+printf("Enter Department: ");
+scanf(" %29[^\n]", temp->department);
+printf("Enter Semester: ");
+scanf("%d", &temp->semester);
+
+printf("\nStudent updated successfully!\n");
+         return;
+    }
+
+    temp=temp->next;
+}
+
+    printf("\nStudent not found!\n");
+
+
 
 }
 
 void deleteStudent(void)
 {
+    int searchRoll;
+
+printf("Enter Roll Number: ");
+scanf("%d",&searchRoll);
+
+     Student * temp =head;
+Student * prev =NULL;
+while(temp!=NULL)
+{
+   
+    
+    if(temp->rollNo==searchRoll){
+         if (temp==head)
+    {
+    head=temp->next;
+    free(temp);
+printf("\nStudent with Roll No %d deleted successfully!\n", searchRoll);
+    return;
+    }
+  prev->next=temp->next;
+  free(temp);
+printf("\nStudent with Roll No %d deleted successfully!\n", searchRoll);
+         return;
+    }
+
+    prev=temp;
+    temp=temp->next;
+}
+
+    printf("\nStudent not found!\n");
 
 }
 
