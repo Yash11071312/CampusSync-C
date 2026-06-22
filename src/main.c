@@ -17,20 +17,25 @@ int main(void)
 
         switch (choice)
         {
-            case 1:
-                addStudent();
-                break;
+           case 1:
+        StudentManagement();
+        break;
 
-            case 2:
-                viewStudents();
-                break;
-            case 3:
-               searchStudent();
-                break;
+    case 2:
+        printf("Academic Records - Coming Soon\n");
+        break;
 
-            case 0:
-                printf("Goodbye!\n");
-                break;
+    case 3:
+        printf("Rank List - Coming Soon\n");
+        break;
+
+    case 4:
+        printf("Statistics - Coming Soon\n");
+        break;
+
+    case 0:
+        printf("Goodbye!\n");
+        break;
 
             default:
                 printf("Invalid Choice!\n");
