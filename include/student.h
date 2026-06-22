@@ -35,4 +35,5 @@ void viewStudents(void);
 void updateStudent(void);
 
 void deleteStudent(void);
+void searchStudent(void);
 #endif

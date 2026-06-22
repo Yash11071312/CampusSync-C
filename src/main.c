@@ -24,6 +24,9 @@ int main(void)
             case 2:
                 viewStudents();
                 break;
+            case 3:
+               searchStudent();
+                break;
 
             case 0:
                 printf("Goodbye!\n");

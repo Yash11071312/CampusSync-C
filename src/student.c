@@ -84,3 +84,35 @@ void deleteStudent(void)
 {
 
 }
+
+void searchStudent(void){
+    int searchRoll;
+
+printf("Enter Roll Number: ");
+scanf("%d",&searchRoll);
+
+     Student * temp =head;
+
+while(temp!=NULL)
+{
+    if(temp->rollNo==searchRoll)
+    {printf("\nStudent Found!\n");
+printf("-----------------------------\n");
+        printf("Roll No    : %d\n", temp->rollNo);
+        printf("Name       : %s\n", temp->name);
+        printf("Department : %s\n", temp->department);
+        printf("Semester   : %d\n", temp->semester);
+        printf("-----------------------------\n");
+
+
+         return;
+    }
+
+    temp=temp->next;
+}
+
+    printf("\nStudent not found!\n");
+
+
+
+}
