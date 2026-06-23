@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "../include/student.h"
 #include "../include/utils.h"
-
+#include "../include/file.h"
 int main(void)
 {
     int choice;
-
     initializeStudentList();
+    loadStudents();
 
     do
     {
@@ -42,6 +42,6 @@ int main(void)
         }
 
     } while (choice != 0);
-
+saveStudents();
     return 0;
 }
