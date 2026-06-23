@@ -5,3 +5,5 @@
 .vscode/
 
 data/*.dat
+students.dat
+CampusSync.exe

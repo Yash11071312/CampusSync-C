@@ -6,7 +6,7 @@ int main(void)
 {
     int choice;
     initializeStudentList();
-    loadStudents();
+    loadStudents();     
 
     do
     {
@@ -33,9 +33,10 @@ int main(void)
         printf("Statistics - Coming Soon\n");
         break;
 
-    case 0:
-        printf("Goodbye!\n");
-        break;
+   case 0:
+    saveStudents();
+    printf("Goodbye!\n");
+    break;
 
             default:
                 printf("Invalid Choice!\n");

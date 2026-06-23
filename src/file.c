@@ -44,5 +44,45 @@ void saveStudents(void)
 }
 void loadStudents(void)
 {
-    printf("Loading students...\n");
+    FILE *fp = fopen("students.dat", "rb");
+
+    if(fp == NULL)
+    {
+        printf("No previous data found.\n");
+        return;
+    }
+
+    StudentData data;
+
+    while(fread(&data, sizeof(StudentData), 1, fp))
+    {
+        Student *newStudent = malloc(sizeof(Student));
+
+        newStudent->rollNo = data.rollNo;
+        strcpy(newStudent->name, data.name);
+        strcpy(newStudent->department, data.department);
+        newStudent->semester = data.semester;
+
+        newStudent->next = NULL;
+
+        if(head == NULL)
+        {
+            head = newStudent;
+        }
+        else
+        {
+            Student *temp = head;
+
+            while(temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+
+            temp->next = newStudent;
+        }
+    }
+
+    fclose(fp);
+
+    printf("Students loaded successfully!\n");
 }
