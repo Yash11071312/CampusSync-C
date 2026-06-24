@@ -29,6 +29,17 @@ do
     printf("3. Search Student\n");
     printf("4. Update Student\n");
     printf("5. Delete Student\n");
+    printf("6. Enter Marks\n");
+printf("7. View Academic Record\n");
+
+
+
+
+
+
+
+
+
     printf("0. Main menu\n\n");
     
     printf("--------------------------------------------\n");
@@ -55,7 +66,13 @@ do
         case 5:
             deleteStudent();
             break;
+        case 6:
+    enterMarks();
+    break;
 
+case 7:
+    viewAcademicRecord();
+    break;
         case 0:
         printf("\nReturning to Main Menu...\n\n");
             break;

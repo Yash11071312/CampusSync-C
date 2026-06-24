@@ -30,6 +30,14 @@ printf("Enter Department: ");
 scanf(" %29[^\n]", newStudent->department);
 printf("Enter Semester: ");
 scanf("%d", &newStudent->semester);
+newStudent->total = 0;
+newStudent->percentage = 0;
+newStudent->cgpa = 0;
+newStudent->grade = 'F';
+for(int i=0; i<5; i++)
+{
+    newStudent->marks[i] = 0;
+}
 newStudent->next = NULL;
 if (head == NULL)
 {
@@ -174,4 +182,89 @@ printf("-----------------------------\n");
 
 
 
+}
+void enterMarks(void)
+{
+    int searchRoll;
+
+    printf("Enter Roll Number: ");
+    scanf("%d", &searchRoll);
+
+    Student *temp = head;
+
+    while(temp != NULL)
+    {
+        if(temp->rollNo == searchRoll)
+        {
+            printf("\nStudent Found!\n");
+temp->total = 0;
+            for(int i = 0; i < 5; i++)
+            {
+                printf("Enter Subject %d Marks: ", i + 1);
+                scanf("%d", &temp->marks[i]);
+
+                temp->total += temp->marks[i];
+            }
+
+            temp->percentage = temp->total / 5.0;
+            temp->cgpa = temp->percentage / 9.5;
+
+            if(temp->percentage >= 90)
+                temp->grade = 'A';
+            else if(temp->percentage >= 75)
+                temp->grade = 'B';
+            else if(temp->percentage >= 60)
+                temp->grade = 'C';
+            else if(temp->percentage >= 40)
+                temp->grade = 'D';
+            else
+                temp->grade = 'F';
+
+            printf("\nAcademic Record Added Successfully!\n");
+
+            return;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\nStudent not found!\n");
+}
+void viewAcademicRecord(void)
+{
+    int searchRoll;
+
+    printf("Enter Roll Number: ");
+    scanf("%d", &searchRoll);
+
+    Student *temp = head;
+
+    while(temp != NULL)
+    {
+        if(temp->rollNo == searchRoll)
+        {
+            printf("\n===== Academic Record =====\n");
+
+            printf("Name       : %s\n", temp->name);
+            printf("Roll No    : %d\n", temp->rollNo);
+
+            for(int i = 0; i < 5; i++)
+            {
+                printf("Subject %d : %d\n",
+                       i + 1,
+                       temp->marks[i]);
+            }
+
+            printf("Total      : %d\n", temp->total);
+            printf("Percentage : %.2f\n", temp->percentage);
+            printf("CGPA       : %.2f\n", temp->cgpa);
+            printf("Grade      : %c\n", temp->grade);
+
+            return;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\nStudent not found!\n");
 }

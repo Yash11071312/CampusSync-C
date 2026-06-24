@@ -5,9 +5,9 @@
 int main(void)
 {
     int choice;
-    initializeStudentList();
-    loadStudents();     
-
+   initializeStudentList();
+printf("Loading Student Database...\n");
+loadStudents();
     do
     {
         displayMainMenu();
@@ -43,6 +43,6 @@ int main(void)
         }
 
     } while (choice != 0);
-saveStudents();
+
     return 0;
 }
