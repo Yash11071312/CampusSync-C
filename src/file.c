@@ -10,8 +10,14 @@ typedef struct
     char name[50];
     char department[30];
     int semester;
-} StudentData;
 
+    int marks[5];
+    int total;
+    float percentage;
+    float cgpa;
+    char grade;
+
+} StudentData;
 void saveStudents(void)
 {
     FILE *fp = fopen("students.dat", "wb");
@@ -32,7 +38,15 @@ void saveStudents(void)
         strcpy(data.name, temp->name);
         strcpy(data.department, temp->department);
         data.semester = temp->semester;
+for(int i = 0; i < 5; i++)
+{
+    data.marks[i] = temp->marks[i];
+}
 
+data.total = temp->total;
+data.percentage = temp->percentage;
+data.cgpa = temp->cgpa;
+data.grade = temp->grade;
         fwrite(&data, sizeof(StudentData), 1, fp);
 
         temp = temp->next;
@@ -62,6 +76,15 @@ void loadStudents(void)
         strcpy(newStudent->name, data.name);
         strcpy(newStudent->department, data.department);
         newStudent->semester = data.semester;
+        for(int i = 0; i < 5; i++)
+{
+    newStudent->marks[i] = data.marks[i];
+}
+
+newStudent->total = data.total;
+newStudent->percentage = data.percentage;
+newStudent->cgpa = data.cgpa;
+newStudent->grade = data.grade;
 
         newStudent->next = NULL;
 
