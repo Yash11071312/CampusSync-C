@@ -29,4 +29,5 @@ void deleteStudent(void);
 void searchStudent(void);
 void enterMarks(void);
 void viewAcademicRecord(void);
+void topperStudent(void);
 #endif

@@ -268,3 +268,31 @@ void viewAcademicRecord(void)
 
     printf("\nStudent not found!\n");
 }
+void topperStudent(void)
+{
+    if(head == NULL)
+    {
+        printf("No students found!\n");
+        return;
+    }
+
+    Student *temp = head;
+    Student *topper = head;
+
+    while(temp != NULL)
+    {
+        if(temp->percentage > topper->percentage)
+        {
+            topper = temp;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\n===== TOPPER =====\n");
+
+    printf("Name       : %s\n", topper->name);
+    printf("Roll No    : %d\n", topper->rollNo);
+    printf("Percentage : %.2f\n", topper->percentage);
+    printf("CGPA       : %.2f\n", topper->cgpa);
+}
