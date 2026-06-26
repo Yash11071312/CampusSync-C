@@ -3,5 +3,5 @@
 
 void displayMainMenu(void);
 void StudentManagement(void);
-
+void statisticsMenu(void);
 #endif

@@ -29,10 +29,9 @@ loadStudents();
         printf("Rank List - Coming Soon\n");
         break;
 
-    case 4:
-        printf("Statistics - Coming Soon\n");
-        break;
-
+case 4:
+    statisticsMenu();
+    break;
    case 0:
     saveStudents();
     printf("Goodbye!\n");

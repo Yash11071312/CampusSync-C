@@ -80,3 +80,50 @@ case 7:
 
 } while(choice != 0);
 }
+void statisticsMenu(void)
+{
+    int choice;
+
+    do
+    {
+        printf("\n==========================================\n");
+        printf("             STATISTICS\n");
+        printf("==========================================\n");
+
+        printf("1. Class Average\n");
+        printf("2. Failed Students\n");
+        printf("3. Pass Percentage\n");
+        printf("4. Topper Student\n");
+        printf("0. Back\n\n");
+
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
+
+        switch(choice)
+        {
+            case 1:
+                classAverage();
+                break;
+
+            case 2:
+                failedStudents();
+                break;
+
+            case 3:
+                passPercentage();
+                break;
+
+            case 4:
+                topperStudent();
+                break;
+
+            case 0:
+                printf("Returning to Main Menu...\n");
+                break;
+
+            default:
+                printf("Invalid choice!\n");
+        }
+
+    } while(choice != 0);
+}
