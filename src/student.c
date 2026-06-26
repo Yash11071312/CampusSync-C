@@ -301,6 +301,11 @@ void classAverage(void)
 Student *temp = head;
 float sum = 0;
 int count = 0;
+if(head == NULL)
+{
+    printf("No students found!\n");
+    return;
+}
 while(temp != NULL)
 {
   sum += temp->percentage;
@@ -315,4 +320,30 @@ if(count == 0)
 float average = sum / count;
 printf("\n===== CLASS AVERAGE =====\n");
 printf("Average Percentage : %.2f%%\n", average);
+}
+void failedStudents(void)
+{
+Student *temp = head;
+int failCount = 0;
+while(temp != NULL){
+    if (temp->percentage<40)
+    {
+        printf("\n--------------------------------------------");
+    printf("Roll No    : %d\n", temp->rollNo);
+printf("Name       : %s\n", temp->name);
+printf("Percentage : %.2f%%\n", temp->percentage);
+        printf("Failed\n");
+        printf("\n--------------------------------------------");
+        failCount++;
+    }
+    
+    temp=temp->next;
+    
+}
+if(failCount == 0)
+{
+    printf("No failed students.\n");
+    return;
+}
+printf("\nTotal Failed Students : %d\n", failCount);
 }
