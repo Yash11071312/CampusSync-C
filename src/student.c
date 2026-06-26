@@ -347,3 +347,35 @@ if(failCount == 0)
 }
 printf("\nTotal Failed Students : %d\n", failCount);
 }
+void passPercentage(void){
+    Student *temp = head;
+int passStudents=0;
+int totalStudents=0;
+  
+if(head == NULL)
+{
+    printf("No students found!\n");
+    return;
+}
+while (temp !=NULL)
+{
+   if (temp->percentage>=40)
+   {
+    passStudents++;
+   }
+   totalStudents++;
+   temp=temp->next;  
+}
+
+
+
+if(passStudents == 0)
+{
+printf("\n===== PASS PERCENTAGE =====\n");
+printf("Pass Percentage : 0.00%%\n");
+    return;
+}
+float percentage = (passStudents * 100.0) / totalStudents;
+printf("\n===== Pass percentage =====\n");
+printf("Pass percentage : %.2f%%\n", percentage);
+}
