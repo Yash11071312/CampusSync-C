@@ -16,37 +16,30 @@ void displayMainMenu(void)
     printf("4. Statistics\n");
     printf("0. Exit\n\n");
 }
-void StudentManagement(void){
-int choice;
-do
+void StudentManagement(void)
 {
-    printf("==========================================\n");
-    printf("Student Management\n");
-    printf("==========================================\n");
-    
-    printf("1. Add Student\n");
-    printf("2. View Students\n");
-    printf("3. Search Student\n");
-    printf("4. Update Student\n");
-    printf("5. Delete Student\n");
-    printf("6. Enter Marks\n");
-printf("7. View Academic Record\n");
-
-
-
-
-
-
-
-
-
-    printf("0. Main menu\n\n");
-    
-    printf("--------------------------------------------\n");
-    printf("Enter Choice: ");
-       scanf("%d", &choice);
-    switch(choice)
+    int choice;
+    do
     {
+        printf("==========================================\n");
+        printf("Student Management\n");
+        printf("==========================================\n");
+
+        printf("1. Add Student\n");
+        printf("2. View Students\n");
+        printf("3. Search Student\n");
+        printf("4. Update Student\n");
+        printf("5. Delete Student\n");
+        printf("6. Enter Marks\n");
+        printf("7. View Academic Record\n");
+
+        printf("0. Main menu\n\n");
+
+        printf("--------------------------------------------\n");
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
         case 1:
             addStudent();
             break;
@@ -67,18 +60,18 @@ printf("7. View Academic Record\n");
             deleteStudent();
             break;
         case 6:
-    enterMarks();
-    break;
-
-case 7:
-    viewAcademicRecord();
-    break;
-        case 0:
-        printf("\nReturning to Main Menu...\n\n");
+            enterMarks();
             break;
-    }
 
-} while(choice != 0);
+        case 7:
+            viewAcademicRecord();
+            break;
+        case 0:
+            printf("\nReturning to Main Menu...\n\n");
+            break;
+        }
+
+    } while (choice != 0);
 }
 void statisticsMenu(void)
 {
@@ -99,31 +92,31 @@ void statisticsMenu(void)
         printf("Enter Choice: ");
         scanf("%d", &choice);
 
-        switch(choice)
+        switch (choice)
         {
-            case 1:
-                classAverage();
-                break;
+        case 1:
+            classAverage();
+            break;
 
-            case 2:
-                failedStudents();
-                break;
+        case 2:
+            failedStudents();
+            break;
 
-            case 3:
-                passPercentage();
-                break;
+        case 3:
+            passPercentage();
+            break;
 
-            case 4:
-                topperStudent();
-                break;
+        case 4:
+            topperStudent();
+            break;
 
-            case 0:
-                printf("Returning to Main Menu...\n");
-                break;
+        case 0:
+            printf("Returning to Main Menu...\n");
+            break;
 
-            default:
-                printf("Invalid choice!\n");
+        default:
+            printf("Invalid choice!\n");
         }
 
-    } while(choice != 0);
+    } while (choice != 0);
 }

@@ -22,7 +22,7 @@ void saveStudents(void)
 {
     FILE *fp = fopen("students.dat", "wb");
 
-    if(fp == NULL)
+    if (fp == NULL)
     {
         printf("Error saving file!\n");
         return;
@@ -30,7 +30,7 @@ void saveStudents(void)
 
     Student *temp = head;
 
-    while(temp != NULL)
+    while (temp != NULL)
     {
         StudentData data;
 
@@ -38,15 +38,15 @@ void saveStudents(void)
         strcpy(data.name, temp->name);
         strcpy(data.department, temp->department);
         data.semester = temp->semester;
-for(int i = 0; i < 5; i++)
-{
-    data.marks[i] = temp->marks[i];
-}
+        for (int i = 0; i < 5; i++)
+        {
+            data.marks[i] = temp->marks[i];
+        }
 
-data.total = temp->total;
-data.percentage = temp->percentage;
-data.cgpa = temp->cgpa;
-data.grade = temp->grade;
+        data.total = temp->total;
+        data.percentage = temp->percentage;
+        data.cgpa = temp->cgpa;
+        data.grade = temp->grade;
         fwrite(&data, sizeof(StudentData), 1, fp);
 
         temp = temp->next;
@@ -60,7 +60,7 @@ void loadStudents(void)
 {
     FILE *fp = fopen("students.dat", "rb");
 
-    if(fp == NULL)
+    if (fp == NULL)
     {
         printf("No previous data found.\n");
         return;
@@ -68,7 +68,7 @@ void loadStudents(void)
 
     StudentData data;
 
-    while(fread(&data, sizeof(StudentData), 1, fp))
+    while (fread(&data, sizeof(StudentData), 1, fp))
     {
         Student *newStudent = malloc(sizeof(Student));
 
@@ -76,19 +76,19 @@ void loadStudents(void)
         strcpy(newStudent->name, data.name);
         strcpy(newStudent->department, data.department);
         newStudent->semester = data.semester;
-        for(int i = 0; i < 5; i++)
-{
-    newStudent->marks[i] = data.marks[i];
-}
+        for (int i = 0; i < 5; i++)
+        {
+            newStudent->marks[i] = data.marks[i];
+        }
 
-newStudent->total = data.total;
-newStudent->percentage = data.percentage;
-newStudent->cgpa = data.cgpa;
-newStudent->grade = data.grade;
+        newStudent->total = data.total;
+        newStudent->percentage = data.percentage;
+        newStudent->cgpa = data.cgpa;
+        newStudent->grade = data.grade;
 
         newStudent->next = NULL;
 
-        if(head == NULL)
+        if (head == NULL)
         {
             head = newStudent;
         }
@@ -96,7 +96,7 @@ newStudent->grade = data.grade;
         {
             Student *temp = head;
 
-            while(temp->next != NULL)
+            while (temp->next != NULL)
             {
                 temp = temp->next;
             }
