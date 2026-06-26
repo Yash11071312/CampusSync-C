@@ -296,3 +296,23 @@ void topperStudent(void)
     printf("Percentage : %.2f\n", topper->percentage);
     printf("CGPA       : %.2f\n", topper->cgpa);
 }
+void classAverage(void)
+{
+Student *temp = head;
+float sum = 0;
+int count = 0;
+while(temp != NULL)
+{
+  sum += temp->percentage;
+count++;
+temp=temp->next ;
+}
+if(count == 0)
+{
+    printf("No students found!\n");
+    return;
+}
+float average = sum / count;
+printf("\n===== CLASS AVERAGE =====\n");
+printf("Average Percentage : %.2f%%\n", average);
+}
