@@ -30,4 +30,8 @@ void searchStudent(void);
 void enterMarks(void);
 void viewAcademicRecord(void);
 void topperStudent(void);
+void classAverage(void);
+void failedStudents(void);
+void passPercentage(void);
+void topperStudent(void);
 #endif
