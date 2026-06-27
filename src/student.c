@@ -407,3 +407,28 @@ void highestMarks(void)
     printf("Name  : %s\n", highest->name);
     printf("Marks : %d\n", highest->total);
 }
+void lowestMarks(void)
+{
+    if(head == NULL)
+    {
+        printf("No students found!\n");
+        return;
+    }
+
+    Student *temp = head;
+    Student *lowest = head;
+
+    while(temp != NULL)
+    {
+        if(temp->total < lowest->total)
+        {
+            lowest = temp;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\n===== LOWEST MARKS =====\n");
+    printf("Name  : %s\n", lowest->name);
+    printf("Marks : %d\n", lowest->total);
+}
