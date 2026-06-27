@@ -35,4 +35,5 @@ void failedStudents(void);
 void passPercentage(void);
 void topperStudent(void);
 void totalStudents(void);
+void highestMarks(void)
 #endif

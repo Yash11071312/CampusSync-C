@@ -382,3 +382,28 @@ void totalStudents(void)
     printf("\n===== TOTAL STUDENTS =====\n");
     printf("Total Students : %d\n", count);
 }
+void highestMarks(void)
+{
+    if(head == NULL)
+    {
+        printf("No students found!\n");
+        return;
+    }
+
+    Student *temp = head;
+    Student *highest = head;
+
+    while(temp != NULL)
+    {
+        if(temp->total > highest->total)
+        {
+            highest = temp;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\n===== HIGHEST MARKS =====\n");
+    printf("Name  : %s\n", highest->name);
+    printf("Marks : %d\n", highest->total);
+}
