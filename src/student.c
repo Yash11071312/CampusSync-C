@@ -432,3 +432,30 @@ void lowestMarks(void)
     printf("Name  : %s\n", lowest->name);
     printf("Marks : %d\n", lowest->total);
 }
+void gradeStatistics(void)
+{
+    int A = 0, B = 0, C = 0, D = 0, F = 0;
+
+    Student *temp = head;
+
+    while(temp != NULL)
+    {
+        switch(temp->grade)
+        {
+            case 'A': A++; break;
+            case 'B': B++; break;
+            case 'C': C++; break;
+            case 'D': D++; break;
+            case 'F': F++; break;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("\n===== GRADE STATISTICS =====\n");
+    printf("A : %d\n", A);
+    printf("B : %d\n", B);
+    printf("C : %d\n", C);
+    printf("D : %d\n", D);
+    printf("F : %d\n", F);
+}

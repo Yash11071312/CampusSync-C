@@ -37,4 +37,5 @@ void topperStudent(void);
 void totalStudents(void);
 void highestMarks(void);
 void lowestMarks(void);
+void gradeStatistics(void);
 #endif
