@@ -368,3 +368,17 @@ void passPercentage(void)
     printf("\n===== Pass percentage =====\n");
     printf("Pass percentage : %.2f%%\n", percentage);
 }
+void totalStudents(void)
+{
+    Student *temp = head;
+    int count = 0;
+
+    while(temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+
+    printf("\n===== TOTAL STUDENTS =====\n");
+    printf("Total Students : %d\n", count);
+}

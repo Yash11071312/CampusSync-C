@@ -34,4 +34,5 @@ void classAverage(void);
 void failedStudents(void);
 void passPercentage(void);
 void topperStudent(void);
+void totalStudents(void);
 #endif
