@@ -459,3 +459,30 @@ void gradeStatistics(void)
     printf("D : %d\n", D);
     printf("F : %d\n", F);
 }
+void searchByName(void)
+{
+    char searchName[50];
+
+    printf("Enter Name: ");
+    scanf(" %49[^\n]", searchName);
+
+    Student *temp = head;
+
+    while(temp != NULL)
+    {
+        if(strcmp(temp->name, searchName) == 0)
+        {
+            printf("\nStudent Found!\n");
+
+            printf("Roll No : %d\n", temp->rollNo);
+            printf("Name    : %s\n", temp->name);
+            printf("CGPA    : %.2f\n", temp->cgpa);
+
+            return;
+        }
+
+        temp = temp->next;
+    }
+
+    printf("Student not found!\n");
+}
