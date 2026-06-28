@@ -87,6 +87,10 @@ void statisticsMenu(void)
         printf("2. Failed Students\n");
         printf("3. Pass Percentage\n");
         printf("4. Topper Student\n");
+        printf("5. Total Students\n");
+        printf("6. Highest Marks\n");
+        printf("7. Lowest Marks\n");
+        printf("8. Grade Statistics\n");
         printf("0. Back\n\n");
 
         printf("Enter Choice: ");
@@ -108,6 +112,21 @@ void statisticsMenu(void)
 
         case 4:
             topperStudent();
+            break;
+        case 5:
+            totalStudents();
+            break;
+
+        case 6:
+            highestMarks();
+            break;
+
+        case 7:
+            lowestMarks();
+            break;
+
+        case 8:
+            gradeStatistics();
             break;
 
         case 0:

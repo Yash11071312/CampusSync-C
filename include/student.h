@@ -39,4 +39,6 @@ void highestMarks(void);
 void lowestMarks(void);
 void gradeStatistics(void);
 void searchByName(void);
+void totalStudents(void);
+
 #endif
